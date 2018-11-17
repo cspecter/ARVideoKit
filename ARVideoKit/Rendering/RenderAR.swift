@@ -86,6 +86,8 @@ struct RenderAR {
             guard let size = bufferSize else { return nil }
             //UIScreen.main.bounds.size
             var renderedFrame: UIImage?
+            let thisView = view as! ARSCNView
+            renderEngine.pointOfView = thisView.pointOfView
             pixelsQueue.sync {
                 renderedFrame = renderEngine.snapshot(atTime: self.time, with: size, antialiasingMode: .none)
             }
