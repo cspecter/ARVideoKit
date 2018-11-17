@@ -89,8 +89,7 @@ struct RenderAR {
             let thisView = view as! ARSCNView
             renderEngine.pointOfView = thisView.pointOfView
             pixelsQueue.sync {
-//                renderedFrame = renderEngine.snapshot(atTime: self.time, with: size, antialiasingMode: .none)
-                renderedFrame = thisView.snapshot()
+                renderedFrame = renderEngine.snapshot(atTime: self.time, with: size, antialiasingMode: .none)
             }
             if let _ = renderedFrame {
             } else {
